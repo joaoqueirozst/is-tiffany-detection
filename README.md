@@ -7,3 +7,7 @@ The detection system receives image streams from cameras installed in the labora
 
 # About Tiffany
 For more projects involving Tiffany, visit [Tiffany](https://github.com/Penguin-Lab/tiffany).
+
+<p align="center">
+  <img src="robot_tiffany.jpeg" width="600"/>
+</p>
