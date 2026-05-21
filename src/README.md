@@ -78,5 +78,5 @@ python3 stream.py
 With the service running, the following is a representation of the detection in the Intelligent Space:
 
 <p align="center">
-  <img src="src/detection.png" width="600"/>
+  <img src="detection.png" width="600"/>
 </p>
