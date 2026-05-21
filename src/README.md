@@ -78,5 +78,19 @@ python3 stream.py
 With the service running, the following is a representation of the detection in the Intelligent Space:
 
 <p align="center">
-  <img src="detection.png" width="600"/>
+  <img src="../detection.png" width="600"/>
 </p>
+
+After starting the code, something like this should appear:
+
+```bash
+(detections), 9.4ms
+Speed: 2.1ms preprocess, 9.4ms inference, 0.7ms postprocess per image at shape (1, 3, 384, 640)
+  [...][tiffany-detector] {"detections": 1, "took_ms": {"detection": 13.06, "service": 22.72}}
+  INFO:tiffany-detector:{"detections": 1, "took_ms": {"detection": 13.06, "service": 22.72}}
+```
+
+## Results and Observations
+As a result, the model was successful in detection, perfectly indicating Tiffany in space `99.6%` of the time, making it a promising application for the laboratory. Furthermore, as expected, it was observed that for points where the hexapod is very close to the cameras (someone holding the robot elevated near the cameras), the system does not detect it, since the database was not trained to find it in those positions. It is interesting to comment on this because, if it is necessary to detect Tiffany at distances other than those already learned by the system, it is necessary to increase the training database with new images.
+
+The work developed demonstrated that the use of computer vision for Tiffany's pose estimation presented satisfactory results, even in an environment with infrastructure limitations. The methods employed were able to estimate the position with a maximum error of approximately `4 cm` and the orientation with a variation of around `9°`. These results indicate that the approach can efficiently replace dedicated sensors embedded in the robot, reducing costs and complexity in the system.
