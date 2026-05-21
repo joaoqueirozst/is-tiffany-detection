@@ -26,7 +26,7 @@ def main() -> None:
     exporter = create_exporter(service_name, zipkin_host, log)
 
     subscription = Subscription(channel=channel, name=service_name)
-    subscription.subscribe('CameraGateway.*.Frame')
+    subscription.subscribe('CameraGateway.*.Frame') # multi cam
     
     while True:
 
@@ -34,14 +34,14 @@ def main() -> None:
         if type(msg) == bool:
             continue
         camera_id = get_topic_id(msg.topic)
-        if camera_id == 5 or camera_id == 6:
-            continue
+        # if camera_id >= 5:
+            # continue
+        
         tracer = Tracer(exporter=exporter, span_context=msg.extract_tracing())
         span = tracer.start_span(name='detection_and_render')
 
         detection_span = None
 
-        
         with tracer.span(name='unpack'):
             img = msg.unpack(Image)
             im_np = to_np(img)
