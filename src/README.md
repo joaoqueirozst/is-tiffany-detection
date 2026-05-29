@@ -84,8 +84,8 @@ With the service running, the following is a representation of the detection in 
 After starting the code, something like this should appear:
 
 ```bash
-(detections), 9.4ms
-Speed: 2.1ms preprocess, 9.4ms inference, 0.7ms postprocess per image at shape (1, 3, 384, 640)
+tiffany 8.0ms
+Speed: 2.1ms preprocess, 8.0ms inference, 2.5ms postprocess per image at shape (1, 3, 384, 640)
   [...][tiffany-detector] {"detections": 1, "took_ms": {"detection": 13.06, "service": 22.72}}
   INFO:tiffany-detector:{"detections": 1, "took_ms": {"detection": 13.06, "service": 22.72}}
 ```
