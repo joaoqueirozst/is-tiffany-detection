@@ -34,7 +34,7 @@ def main() -> None:
         if type(msg) == bool:
             continue
         camera_id = get_topic_id(msg.topic)
-        # if camera_id >= 5:
+        # if int(camera_id) >= 5:
             # continue
         
         tracer = Tracer(exporter=exporter, span_context=msg.extract_tracing())
