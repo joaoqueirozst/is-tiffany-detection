@@ -8,7 +8,7 @@ channel = Channel(broker_uri)
 subscription = Subscription(channel)
 
 # Receives rendered images from any camera.
-subscription.subscribe("tiffanyDetector.1.Detection")
+subscription.subscribe("tiffanyDetector.*.Detection")
 # print("Waiting images...")
 
 while True:
